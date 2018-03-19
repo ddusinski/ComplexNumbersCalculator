@@ -3,21 +3,16 @@ import java.util.Scanner;
 public class Calculator {
 
     private Scanner console = new Scanner(System.in);
-    private String msg;
     private ComplexNumber firstInputComplexNumber;
     private ComplexNumber secondInputComplexNumber;
-    private int userChoice;
 
     public Calculator()
 
     {
-
         showWelcome();
         askForData();
-        CalculatorMenuService();
-
+        calculatorMenuService();
     }
-
 
     private void showWelcome() {
         String msg = "\n #########################################"
@@ -26,7 +21,8 @@ public class Calculator {
     }
 
     private void askForData() {
-        msg = " #########################################"
+
+        String msg = " #########################################"
                 + "\n Give Input Data"
                 + "\n #########################################"
                 + "\n First Number is:";
@@ -50,16 +46,9 @@ public class Calculator {
         return new ComplexNumber(realPart, imaginaryPart);
     }
 
-
-    private String showResult(ComplexNumber reasultComplexNumber) {
-        return "( " + reasultComplexNumber.realPart + " . " + reasultComplexNumber.imaginaryPart + " )";
-
-    }
-
-
     private void showMenu() {
 
-        msg = "\n #########################################"
+        String msg = "\n #########################################"
                 + "\n Choose the Operation:"
                 + "\n #########################################"
                 + "\n 1 - Change input data"
@@ -69,15 +58,13 @@ public class Calculator {
                 + "\n 5 - Division"
                 + "\n 6 - EXIT"
                 + "\n #########################################";
-
         System.out.println(msg);
 
     }
 
-    private void CalculatorMenuService()
+    private void calculatorMenuService()
     {
-
-
+        int userChoice = 0;
         while (userChoice != 6)
         {
             showMenu();
@@ -90,42 +77,49 @@ public class Calculator {
                 }
 
                 case 2: {
-                    msg =   "\n #########################################"
+                    String msg =   "\n #########################################"
                             + "\n Addition:"
-                            + showResult(ComplexNumber.ComplexSum(firstInputComplexNumber, secondInputComplexNumber))
+                            + ComplexNumber.toString(ComplexNumberUtils.complexSum(firstInputComplexNumber, secondInputComplexNumber))
                             + "\n #########################################";
                     System.out.println(msg);
                     break; }
 
                 case 3: {
 
-                    msg =   "\n #########################################"
+                    String msg =   "\n #########################################"
                             + "\n Subtraction:"
-                            + showResult(ComplexNumber.ComplexSubtraction(firstInputComplexNumber, secondInputComplexNumber))
+                            + ComplexNumber.toString(ComplexNumberUtils.complexSubtraction(firstInputComplexNumber, secondInputComplexNumber))
                             + "\n #########################################";
                     System.out.println(msg);
                     break; }
 
                 case 4: {
-                    msg =   "\n #########################################"
+                    String msg =   "\n #########################################"
                             + "\n Multiplication:"
-                            + showResult(ComplexNumber.ComplexMultiplication(firstInputComplexNumber, secondInputComplexNumber))
+                            + ComplexNumber.toString(ComplexNumberUtils.complexMultiplication(firstInputComplexNumber, secondInputComplexNumber))
                             + "\n #########################################";
                     System.out.println(msg);
                     break; }
 
                 case 5: {
-                    msg =   "\n #########################################"
+                    String msg =   "\n #########################################"
                             + "\n Division:"
-                            + showResult(ComplexNumber.CompletDivision(firstInputComplexNumber, secondInputComplexNumber))
+                            + ComplexNumber.toString(ComplexNumberUtils.complexDivision(firstInputComplexNumber, secondInputComplexNumber))
                             + "\n #########################################";
                     System.out.println(msg);
                     break;
                 }
+                case 6: {
+                System.out.println("Good bye!");
+                break;
+                }
+
+                default:
+                {
+                    System.out.println("Wrong choice, please type again");
+                    break;
+                }
             }
-
         }
-
     }
-
 }
