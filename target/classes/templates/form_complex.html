@@ -1,0 +1,81 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script th:src="@{/jquery.min.js}"></script>
+    <script th:src="@{/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/bootstrap.min.css}"/>
+</head>
+<body>
+<div class="container">
+    <table class="table table-striped">
+        <form class="form-group" th:action="@{/}" th:object="${CplxNumberInputForm}" method="post">
+            <thead>
+            <tr>
+                <th>
+                    First Number Real Part:
+                </th>
+                <th>
+                    First Number Imaginary Part:
+                </th>
+                <th>
+                    Second Number Real Part:
+                </th>
+                <th>
+                    Second Number Imaginary Part:
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <input class="form-control" type="text" th:field="*{firstComplexNumberRealPart}"/>
+                </td>
+                <td>
+                    <input class="form-control" type="text" th:field="*{firstComplexNumberImaginaryPart}"/>
+                </td>
+                <td>
+                    <input class="form-control" type="text" th:field="*{secondComplexNumberRealPart}"/>
+                </td>
+                <td>
+                    <input class="form-control" type="text" th:field="*{secondComplexNumberImaginaryPart}"/>
+                </td>
+
+            </tr>
+            <tr>
+                <td th:errors="*{firstComplexNumberRealPart}"></td>
+                <td th:errors="*{firstComplexNumberImaginaryPart}"></td>
+                <td th:errors="*{secondComplexNumberRealPart}"></td>
+                <td th:errors="*{secondComplexNumberImaginaryPart}"></td>
+
+            </tr>
+            <tr>
+                <td>Choose the operation:</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td align="center">Sum</td>
+                <td align="center">Subtraction</td>
+                <td align="center">Multiplication</td>
+                <td align="center">Division</td>
+            </tr>
+            <tr>
+                <td><input class="form-control" type="radio" checked="checked"  th:field="*{option}" value="1" ></td>
+                <td><input class="form-control" type="radio" th:field="*{option}" value="2"></td>
+                <td><input class="form-control" type="radio" th:field="*{option}" value="3"></td>
+                <td><input class="form-control" type="radio" th:field="*{option}" value="3"></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-success" type="submit">Submit</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+        </form>
+    </table>
+</div>
+</body>
+</html>
