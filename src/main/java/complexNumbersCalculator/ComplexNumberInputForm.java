@@ -15,8 +15,7 @@ public class ComplexNumberInputForm {
     @NotNull
     private int option;
 
-    private int resultComplexNumberRealPart;
-    private int resultComplexNumberImaginaryPart;
+
 
     public int getFirstComplexNumberImaginaryPart() {
         return firstComplexNumberImaginaryPart;
@@ -50,13 +49,6 @@ public class ComplexNumberInputForm {
         this.firstComplexNumberImaginaryPart = firstComplexNumberImaginaryPart;
     }
 
-    public void setResultComplexNumberImaginaryPart(int resultComplexNumberImaginaryPart) {
-        this.resultComplexNumberImaginaryPart = resultComplexNumberImaginaryPart;
-    }
-
-    public void setResultComplexNumberRealPart(int resultComplexNumberRealPart) {
-        this.resultComplexNumberRealPart = resultComplexNumberRealPart;
-    }
 
     public int getOption() {
         return option;
@@ -66,25 +58,6 @@ public class ComplexNumberInputForm {
         this.option = option;
     }
 
-    public void computeResult()
-    {
-        ComplexNumber firstComplexNumber =new ComplexNumber(this.firstComplexNumberRealPart,this.firstComplexNumberImaginaryPart);
-        ComplexNumber secondComplexNumber =new ComplexNumber(this.secondComplexNumberRealPart,this.secondComplexNumberImaginaryPart);
 
-        Calculator complexNumberCalculator =new Calculator();
-        ComplexNumber resultComplexNumber = complexNumberCalculator.calculate(firstComplexNumber,secondComplexNumber, this.option);
-        this.resultComplexNumberImaginaryPart=resultComplexNumber.imaginaryPart;
-        this.resultComplexNumberRealPart=resultComplexNumber.realPart;
 
-    }
-
-    public int getResultComplexNumberImaginaryPart() {
-        computeResult();
-        return resultComplexNumberImaginaryPart;
-    }
-
-    public int getResultComplexNumberRealPart() {
-        computeResult();
-        return resultComplexNumberRealPart;
-    }
 }

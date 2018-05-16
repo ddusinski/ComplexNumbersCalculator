@@ -4,10 +4,11 @@
     <title>Complex Numbers Calculator</title>
 </head>
 <body>
-
-<h1>
+<div>
+<h1>Complex Numbers Calculator Web Version</h1>
+<table>
     <tr>
-        <td>Results of operation:</td>
+        <td>You have chosen:</td>
         <td>
             <div th:if="${CplxNumberInputForm.getOption()} eq '1'">Sum</div>
             <div th:if="${CplxNumberInputForm.getOption()} eq '3'">Multiplication</div>
@@ -15,9 +16,44 @@
             <div th:if="${CplxNumberInputForm.getOption()} eq '4'">Division</div>
         </td>
     </tr>
-</h1>
-<h2 th:text="'Results real part:'+${CplxNumberInputForm.getResultComplexNumberRealPart()}"></h2>
-<h2 th:text="'Results imaginary part:'+${CplxNumberInputForm.getResultComplexNumberImaginaryPart()}"></h2>
+    <tr>
+        <td>
+            First complex number:
+        </td>
+        <td>
+           <div th:text="'Real part: '+${CplxNumberInputForm.getFirstComplexNumberRealPart()}+
+                         ' Imaginary part: '+${CplxNumberInputForm.firstComplexNumberImaginaryPart}">
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Second complex number:
+        </td>
+        <td>
+            <div th:text="'Real part: '+${CplxNumberInputForm.getSecondComplexNumberRealPart()}+
+                         ' Imaginary part: '+${CplxNumberInputForm.getSecondComplexNumberImaginaryPart()}">
+            </div>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>
+            Result complex number:
+        </td>
+        <td>
+            <div th:text="'Real part: '+${results.getRealPart()}+ ' Imaginary part: '+${results.getImaginaryPart()}">
+            </div>
+        </td>
+    </tr>
+
+</table>
+
+
+
 <a th:href="@{/}">Go Back</a>
+</div>
 </body>
 </html>

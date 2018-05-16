@@ -15,6 +15,13 @@ class ComplexNumber {
         this.imaginaryPart = 0;
     }
 
+    public int getRealPart() {
+        return realPart;
+    }
+
+    public int getImaginaryPart() {
+        return imaginaryPart;
+    }
 }
 
 
