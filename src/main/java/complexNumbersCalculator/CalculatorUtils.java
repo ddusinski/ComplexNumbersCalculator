@@ -1,9 +1,9 @@
 package complexNumbersCalculator;
 
 
-public class Calculator {
+public  class CalculatorUtils {
 
-    public ComplexNumber calculate(ComplexNumber firstInputComplexNumber, ComplexNumber secondInputComplexNumber, int operation) {
+    public static ComplexNumber calculate(ComplexNumber firstInputComplexNumber, ComplexNumber secondInputComplexNumber, int operation) {
         switch (operation) {
             case 1: {
                 return ComplexNumberUtils.complexSum(firstInputComplexNumber, secondInputComplexNumber);

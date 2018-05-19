@@ -2,10 +2,10 @@ package complexNumbersCalculator;
 
 class ComplexNumber {
 
-    int realPart;
-    int imaginaryPart;
+    double realPart;
+    double imaginaryPart;
 
-    ComplexNumber(int realPart, int imaginaryPart) {
+    ComplexNumber(double realPart, double imaginaryPart) {
         this.realPart = realPart;
         this.imaginaryPart = imaginaryPart;
     }
@@ -15,11 +15,11 @@ class ComplexNumber {
         this.imaginaryPart = 0;
     }
 
-    public int getRealPart() {
+    public double getRealPart() {
         return realPart;
     }
 
-    public int getImaginaryPart() {
+    public double getImaginaryPart() {
         return imaginaryPart;
     }
 }

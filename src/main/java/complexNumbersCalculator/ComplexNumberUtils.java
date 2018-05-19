@@ -1,4 +1,5 @@
 package complexNumbersCalculator;
+import java.lang.Math;
 
 public class ComplexNumberUtils {
 
@@ -13,15 +14,15 @@ public class ComplexNumberUtils {
     }
 
     static ComplexNumber complexMultiplication(ComplexNumber A, ComplexNumber B) {
-        int tempRealPart = A.realPart * B.realPart - A.imaginaryPart * B.imaginaryPart;
-        int tempImaginaryPart = A.imaginaryPart * B.realPart + A.realPart * B.imaginaryPart;
+        double tempRealPart = A.realPart * B.realPart - A.imaginaryPart * B.imaginaryPart;
+        double tempImaginaryPart = A.imaginaryPart * B.realPart + A.realPart * B.imaginaryPart;
         return new ComplexNumber(tempRealPart, tempImaginaryPart);
     }
 
 
     static ComplexNumber complexDivision(ComplexNumber A, ComplexNumber B) {
-        int tempRealPart = A.realPart * B.realPart + A.imaginaryPart * B.imaginaryPart / (B.realPart ^ 2 + B.imaginaryPart ^ 2);
-        int tempImaginaryPart = A.imaginaryPart * B.realPart - A.realPart * B.imaginaryPart / (B.realPart ^ 2 + B.imaginaryPart ^ 2);
+        double tempRealPart = A.realPart * B.realPart + A.imaginaryPart * B.imaginaryPart / (Math.pow(B.realPart ,2) + Math.pow(B.imaginaryPart , 2));
+        double tempImaginaryPart = A.imaginaryPart * B.realPart - A.realPart * B.imaginaryPart / (Math.pow(B.realPart,2) + Math.pow(B.imaginaryPart,2));
         return new ComplexNumber(tempRealPart, tempImaginaryPart);
     }
 
